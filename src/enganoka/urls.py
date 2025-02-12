@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 
 admin.site.site_header = 'The Engineer Anoka Foundation Admin Panel'
@@ -26,6 +26,10 @@ admin.site.index_title = 'Welcome to The Engineer Anoka Foundation Admin Panel'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('i18n/', include('django.conf.urls.i18n')),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
+    path('tinymce/', include('tinymce.urls')),
+    path('newsletter/', include('newsletter.urls')),
 ]
 
 if settings.DEBUG:

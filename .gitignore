@@ -153,6 +153,9 @@ venv.bak/
 # Secrets
 secrets.json
 
+# logs
+logs/
+
 # mypy
 .mypy_cache/
 .dmypy.json

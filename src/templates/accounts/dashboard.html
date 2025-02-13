@@ -1,0 +1,12 @@
+<div id="notifications"></div>
+
+<script>
+    fetch("/accounts/notifications/")
+        .then(response => response.json())
+        .then(data => {
+            let notificationsDiv = document.getElementById("notifications");
+            notificationsDiv.innerHTML = data.notifications
+                .map(n => `<p>${n.message} - ${new Date(n.created_at).toLocaleString()}</p>`)
+                .join("");
+        });
+</script>

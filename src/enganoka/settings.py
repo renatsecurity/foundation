@@ -67,7 +67,9 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'tinymce',
     'newsletter',
+    'django_extensions',
     # Local apps
+    'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
 ]
 
@@ -84,6 +86,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'enganoka.urls'
+
+# AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Using sorl-thumbnail
 NEWSLETTER_THUMBNAIL = 'sorl-thumbnail'

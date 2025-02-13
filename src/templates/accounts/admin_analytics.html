@@ -1,0 +1,10 @@
+<h2>Admin Analytics</h2>
+<p>Total Users: {{ total_users }}</p>
+<p>Active Users (Last 30 Days): {{ active_users }}</p>
+
+<h3>User Growth</h3>
+<ul>
+    {% for data in user_growth %}
+        <li>{{ data.day }}: {{ data.count }}</li>
+    {% endfor %}
+</ul>

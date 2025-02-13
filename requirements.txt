@@ -9,3 +9,6 @@ django-tinymce==4.1.0
 sorl-thumbnail==12.11.0
 django-import-export==4.3.5
 django-taggit==6.1.0
+django-extensions==3.2.3
+matplotlib==3.10.0
+django-simple-history==3.8.0

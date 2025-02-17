@@ -1,0 +1,10 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>{{ event.title }}</h1>
+    <p>{{ event.description }}</p>
+    <p><strong>Date:</strong> {{ event.date }}</p>
+    <p><strong>Location:</strong> {{ event.location }}</p>
+    {% if event.image %}
+        <img src="{{ event.image.url }}" alt="{{ event.title }}">
+    {% endif %}
+{% endblock %}

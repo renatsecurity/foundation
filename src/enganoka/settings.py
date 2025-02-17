@@ -72,6 +72,8 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'impact.apps.ImpactConfig',
     'mentor.apps.MentorConfig',
+    'partners.apps.PartnersConfig',
+    'events.apps.EventsConfig',
     'pages.apps.PagesConfig',
 ]
 

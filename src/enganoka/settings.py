@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'django_extensions',
     # Local apps
     'accounts.apps.AccountsConfig',
+    'impact.apps.ImpactConfig',
     'pages.apps.PagesConfig',
 ]
 

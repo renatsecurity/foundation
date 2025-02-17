@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>Impact Stories</h1>
+    <ul>
+        {% for impact in impacts %}
+            <li><a href="{{ impact.get_absolute_url }}">{{ impact.title }}</a> - {{ impact.date }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

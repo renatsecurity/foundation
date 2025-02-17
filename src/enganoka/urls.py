@@ -28,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),
     path("accounts/", include("accounts.urls")),
+    path('impact/', include('impact.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
     path("ckeditor5/", include('django_ckeditor_5.urls')),
     path('tinymce/', include('tinymce.urls')),

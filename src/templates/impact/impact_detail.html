@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>{{ impact.title }}</h1>
+    <p>{{ impact.description }}</p>
+    <p><strong>Date:</strong> {{ impact.date }}</p>
+    {% if impact.image %}
+        <img src="{{ impact.image.url }}" alt="{{ impact.title }}">
+    {% endif %}
+{% endblock %}

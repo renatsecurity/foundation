@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>Career Opportunities</h1>
+    <ul>
+        {% for career in careers %}
+            <li><a href="{{ career.get_absolute_url }}">{{ career.title }}</a> - {{ career.location }} (Deadline: {{ career.deadline }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>{{ mentor.name }}</h1>
+    <p><strong>Expertise:</strong> {{ mentor.expertise }}</p>
+    <p>{{ mentor.bio }}</p>
+    {% if mentor.image %}
+        <img src="{{ mentor.image.url }}" alt="{{ mentor.name }}">
+    {% endif %}
+{% endblock %}

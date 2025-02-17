@@ -1,7 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-from django_ckeditor_5 import CKEditor5Field
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class Impact(models.Model):

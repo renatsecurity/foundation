@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     # Local apps
     'accounts.apps.AccountsConfig',
     'impact.apps.ImpactConfig',
+    'mentor.apps.MentorConfig',
     'pages.apps.PagesConfig',
 ]
 

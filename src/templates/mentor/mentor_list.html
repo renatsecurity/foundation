@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>Mentors</h1>
+    <ul>
+        {% for mentor in mentors %}
+            <li><a href="{{ mentor.get_absolute_url }}">{{ mentor.name }}</a> - {{ mentor.expertise }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

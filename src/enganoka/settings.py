@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     'mentor.apps.MentorConfig',
     'partners.apps.PartnersConfig',
     'events.apps.EventsConfig',
+    'get_involved.apps.GetInvolvedConfig',
     'alumni.apps.AlumniConfig',
     'careers.apps.CareersConfig',
     'research.apps.ResearchConfig',

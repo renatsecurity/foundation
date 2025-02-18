@@ -1,0 +1,8 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>{{ opportunity.title }}</h1>
+    <p><strong>Category:</strong> <a href="{{ opportunity.category.get_absolute_url }}">{{ opportunity.category.name }}</a></p>
+    <p><strong>Description:</strong> {{ opportunity.description }}</p>
+    <p><strong>Deadline:</strong> {{ opportunity.deadline }}</p>
+    <p><strong>Contact:</strong> <a href="mailto:{{ opportunity.contact_email }}">{{ opportunity.contact_email }}</a></p>
+{% endblock %}

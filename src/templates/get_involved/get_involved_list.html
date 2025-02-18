@@ -1,0 +1,16 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>Get Involved</h1>
+    <h2>Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Opportunities</h2>
+    <ul>
+        {% for opportunity in opportunities %}
+            <li><a href="{{ opportunity.get_absolute_url }}">{{ opportunity.title }}</a> (Deadline: {{ opportunity.deadline }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

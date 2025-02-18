@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>{{ category.name }} Opportunities</h1>
+    <ul>
+        {% for opportunity in opportunities %}
+            <li><a href="{{ opportunity.get_absolute_url }}">{{ opportunity.title }}</a> (Deadline: {{ opportunity.deadline }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

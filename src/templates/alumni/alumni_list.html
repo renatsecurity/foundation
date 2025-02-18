@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>Alumni Network</h1>
+    <ul>
+        {% for alumni in alumni_members %}
+            <li><a href="{{ alumni.get_absolute_url }}">{{ alumni.name }}</a> - {{ alumni.occupation }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

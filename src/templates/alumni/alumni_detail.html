@@ -1,0 +1,14 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>{{ alumni.name }}</h1>
+    <p><strong>Graduation Year:</strong> {{ alumni.graduation_year }}</p>
+    <p><strong>Occupation:</strong> {{ alumni.occupation }}</p>
+    <p><strong>Location:</strong> {{ alumni.location }}</p>
+    <p>{{ alumni.bio }}</p>
+    {% if alumni.linkedin_url %}
+        <p><a href="{{ alumni.linkedin_url }}" target="_blank">LinkedIn Profile</a></p>
+    {% endif %}
+    {% if alumni.profile_picture %}
+        <img src="{{ alumni.profile_picture.url }}" alt="{{ alumni.name }}">
+    {% endif %}
+{% endblock %}

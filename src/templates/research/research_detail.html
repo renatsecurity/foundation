@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>{{ research.title }}</h1>
+    <p><strong>Author:</strong> {{ research.author }}</p>
+    <p><strong>Publication Date:</strong> {{ research.publication_date }}</p>
+    <p><strong>Category:</strong> <a href="{{ research.category.get_absolute_url }}">{{ research.category.name }}</a></p>
+    <p>{{ research.abstract }}</p>
+    <a href="{{ research.document.url }}" download>Download Research Paper</a>
+{% endblock %}

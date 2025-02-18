@@ -76,6 +76,7 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'alumni.apps.AlumniConfig',
     'careers.apps.CareersConfig',
+    'research.apps.ResearchConfig',
     'resources.apps.ResourcesConfig',
     'media_app.apps.MediaAppConfig',
     'pages.apps.PagesConfig',

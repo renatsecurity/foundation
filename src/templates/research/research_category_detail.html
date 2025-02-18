@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>{{ category.name }} Research Papers</h1>
+    <ul>
+        {% for paper in research_papers %}
+            <li><a href="{{ paper.get_absolute_url }}">{{ paper.title }}</a> - {{ paper.author }} ({{ paper.publication_date }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

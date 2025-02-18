@@ -1,0 +1,8 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>{{ article.title }}</h1>
+    <p><strong>Category:</strong> <a href="{{ article.category.get_absolute_url }}">{{ article.category.name }}</a></p>
+    <p><strong>Author:</strong> {{ article.author }}</p>
+    <p><strong>Published Date:</strong> {{ article.published_date }}</p>
+    <p>{{ article.content }}</p>
+{% endblock %}

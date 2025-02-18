@@ -1,0 +1,16 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>Gender & Green Initiatives</h1>
+    <h2>Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Articles</h2>
+    <ul>
+        {% for article in articles %}
+            <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a> (Published: {{ article.published_date }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'partners.apps.PartnersConfig',
     'events.apps.EventsConfig',
     'careers.apps.CareersConfig',
+    'resources.apps.ResourcesConfig',
     'pages.apps.PagesConfig',
 ]
 

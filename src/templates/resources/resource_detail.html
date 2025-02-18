@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>{{ resource.title }}</h1>
+    <p>{{ resource.description }}</p>
+    <p><strong>Published:</strong> {{ resource.published_date }}</p>
+    {% if resource.file %}
+        <p><a href="{{ resource.file.url }}" download>Download Resource</a></p>
+    {% endif %}
+{% endblock %}

@@ -43,6 +43,7 @@ urlpatterns = [
     path('research/', include('research.urls')),
     path('resources/', include('resources.urls')),
     path('media_urls/', include('media_app.urls')),
+    path('our-approach/', include('our_approach.urls')),
     path('alumni/', include('alumni.urls')),
     path('faqs/', include('faqs.urls')),
     path('i18n/', include('django.conf.urls.i18n')),

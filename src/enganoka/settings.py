@@ -83,6 +83,7 @@ INSTALLED_APPS = [
     'research.apps.ResearchConfig',
     'resources.apps.ResourcesConfig',
     'media_app.apps.MediaAppConfig',
+    'our_approach.apps.OurApproachConfig',
     'pages.apps.PagesConfig',
     'privacy_policy.apps.PrivacyPolicyConfig',
     'safeguard_policy.apps.SafeguardPolicyConfig',

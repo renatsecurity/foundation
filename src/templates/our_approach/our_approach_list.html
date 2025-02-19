@@ -1,0 +1,17 @@
+{% extends "../pages/base.html" %}
+
+{% block content %}
+<h1>Our Approach</h1>
+<ul>
+    {% for approach in approaches %}
+        <li>
+            {% if approach.image %}
+                <img src="{{ approach.image.url }}" alt="{{ approach.title }}" style="max-width:100%;">
+            {% elif approach.youtube_video %}
+                <iframe width="560" height="315" src="{{ approach.youtube_video }}" frameborder="0" allowfullscreen></iframe>
+            {% endif %}
+            <a href="{{ approach.get_absolute_url }}">{{ approach.title }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

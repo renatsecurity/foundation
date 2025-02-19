@@ -1,0 +1,16 @@
+{% extends "../pages/base.html" %}
+
+{% block content %}
+<h1>{{ approach.title }}</h1>
+<p>{{ approach.description }}</p>
+
+{% if approach.image %}
+    <img src="{{ approach.image.url }}" alt="{{ approach.title }}" style="max-width:100%;">
+{% endif %}
+
+{% if approach.youtube_video %}
+    <iframe width="560" height="315" src="{{ approach.youtube_video }}" frameborder="0" allowfullscreen></iframe>
+{% endif %}
+
+<a href="{% url 'our_approach_list' %}">Back to Our Approach</a>
+{% endblock %}

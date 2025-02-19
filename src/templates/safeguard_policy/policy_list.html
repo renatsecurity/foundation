@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>Safeguard Policies</h1>
+    <ul>
+        {% for policy in policies %}
+            <li><a href="{{ policy.get_absolute_url }}">{{ policy.title }}</a> (Last Updated: {{ policy.last_updated }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

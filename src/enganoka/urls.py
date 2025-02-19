@@ -37,7 +37,7 @@ urlpatterns = [
     path('get_involved/', include('get_involved.urls')),
     # path('contact/', include('pages.urls')),
     path('safeguard-policy/', include('safeguard_policy.urls')),
-    # path('privacy_policy/', include('pages.urls')),
+    path('privacy-policy/', include('privacy_policy.urls')),
     path('terms-and-conditions/', include('terms_and_conditions.urls')),
     # path('about_us/', include('pages.urls')),
     path('research/', include('research.urls')),

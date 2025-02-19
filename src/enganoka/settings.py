@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     'resources.apps.ResourcesConfig',
     'media_app.apps.MediaAppConfig',
     'pages.apps.PagesConfig',
+    'terms_and_conditions.apps.TermsAndConditionsConfig',
 ]
 
 MIDDLEWARE = [

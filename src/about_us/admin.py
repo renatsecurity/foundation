@@ -1,5 +1,15 @@
 from django.contrib import admin
-from .models import MissionVision, CorporateProfile, AboutPartner, AboutMentor, GetInvolved, UpcomingEvent
+from .models import (
+    AboutUs,
+    MissionVision, CorporateProfile,
+    AboutPartner, AboutMentor,
+    GetInvolved, UpcomingEvent
+)
+
+
+@admin.register(AboutUs)
+class AboutUsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'last_updated')
 
 
 @admin.register(MissionVision)

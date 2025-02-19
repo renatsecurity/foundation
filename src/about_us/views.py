@@ -1,5 +1,15 @@
 from django.shortcuts import render, get_object_or_404
-from .models import MissionVision, CorporateProfile, AboutPartner, AboutMentor, GetInvolved, UpcomingEvent
+from .models import (
+    AboutUs,
+    MissionVision, CorporateProfile,
+    AboutPartner, AboutMentor,
+    GetInvolved, UpcomingEvent
+)
+
+
+def about_us(request):
+    about = AboutUs.objects.first()
+    return render(request, 'about_us/about.html', {'about': about})
 
 
 # def mission_vision(request):

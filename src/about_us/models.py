@@ -3,6 +3,15 @@ from django.urls import reverse
 from django.utils.text import slugify
 
 
+class AboutUs(models.Model):
+    title = models.CharField(max_length=255, default="About Us")
+    content = models.TextField()
+    last_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+
 class MissionVision(models.Model):
     title = models.CharField(max_length=255, default="Our Mission & Vision")
     slug = models.SlugField(unique=True, blank=True)

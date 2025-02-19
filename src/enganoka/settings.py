@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'django_extensions',
     # Local apps
     'accounts.apps.AccountsConfig',
+    'about_us.apps.AboutUsConfig',
     'impact.apps.ImpactConfig',
     'mentor.apps.MentorConfig',
     'partners.apps.PartnersConfig',

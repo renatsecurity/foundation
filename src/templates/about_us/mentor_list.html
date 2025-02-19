@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>Our Mentors</h1>
+    <ul>
+        {% for mentor in mentors %}
+            <li><strong>{{ mentor.name }}</strong> - {{ mentor.bio }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -39,7 +39,7 @@ urlpatterns = [
     path('safeguard-policy/', include('safeguard_policy.urls')),
     path('privacy-policy/', include('privacy_policy.urls')),
     path('terms-and-conditions/', include('terms_and_conditions.urls')),
-    # path('about_us/', include('pages.urls')),
+    path('about-us/', include('about_us.urls')),
     path('research/', include('research.urls')),
     path('resources/', include('resources.urls')),
     path('media_urls/', include('media_app.urls')),

@@ -1,0 +1,9 @@
+{% extends '../pages/base.html' %}
+{% block content %}
+    <h1>Get Involved</h1>
+    <ul>
+        {% for opportunity in opportunities %}
+            <li><strong>{{ opportunity.title }}</strong>: {{ opportunity.content }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

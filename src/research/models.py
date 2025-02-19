@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class ResearchCategory(models.Model):
@@ -17,12 +18,15 @@ class ResearchCategory(models.Model):
 
     def get_absolute_url(self):
         return reverse('research_category_detail', args=[self.slug])
+    
+    class Meta:
+        verbose_name_plural = "Research Categories"
 
 
 class Research(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    abstract = models.TextField()
+    abstract = CKEditor5Field('Text', config_name='extends')
     author = models.CharField(max_length=255)
     publication_date = models.DateField()
     document = models.FileField(upload_to='research_papers/')
@@ -38,3 +42,6 @@ class Research(models.Model):
 
     def get_absolute_url(self):
         return reverse('research_detail', args=[self.slug])
+    
+    class Meta:
+        verbose_name_plural = "Research Papers"

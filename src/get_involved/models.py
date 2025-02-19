@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class OpportunityCategory(models.Model):
@@ -17,12 +18,16 @@ class OpportunityCategory(models.Model):
 
     def get_absolute_url(self):
         return reverse('get_involved_category_detail', args=[self.slug])
+    
+    class Meta:
+        verbose_name_plural = "Opportunity Categories"
+        ordering = ['name']
 
 
 class Opportunity(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    description = models.TextField()
+    description = CKEditor5Field('Text', config_name='extends')
     category = models.ForeignKey(OpportunityCategory, on_delete=models.CASCADE, related_name='opportunities')
     deadline = models.DateField(null=True, blank=True)
     contact_email = models.EmailField()
@@ -37,3 +42,7 @@ class Opportunity(models.Model):
 
     def get_absolute_url(self):
         return reverse('get_involved_detail', args=[self.slug])
+    
+    class Meta:
+        verbose_name_plural = "Opportunities"
+        ordering = ['title']

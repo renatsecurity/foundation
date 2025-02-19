@@ -9,6 +9,9 @@ class PartnerGroup(models.Model):
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name_plural = "Partner Groups"
 
 
 class Partner(models.Model):
@@ -29,3 +32,6 @@ class Partner(models.Model):
 
     def get_absolute_url(self):
         return reverse('partner_detail', args=[self.slug])
+    
+    class Meta:
+        verbose_name_plural = "Partners"

@@ -23,3 +23,7 @@ class Career(models.Model):
 
     def get_absolute_url(self):
         return reverse('career_detail', args=[self.slug])
+    
+    class Meta:
+        verbose_name_plural = "Careers"
+        ordering = ['-posted_date']

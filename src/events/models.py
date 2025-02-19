@@ -23,4 +23,5 @@ class Event(models.Model):
         return reverse('event_detail', args=[self.slug])
 
     class Meta:
+        verbose_name_plural = "Events"
         ordering = ['-date']

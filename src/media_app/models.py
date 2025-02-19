@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django_ckeditor_5.fields import CKEditor5Field
 
 class MediaType(models.TextChoices):
     NEWS = 'News', 'News'
@@ -11,7 +12,7 @@ class MediaType(models.TextChoices):
 class Media(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    content = models.TextField()
+    content = CKEditor5Field('Text', config_name='extends')
     media_type = models.CharField(max_length=20, choices=MediaType.choices)
     published_date = models.DateTimeField(auto_now_add=True)
 
@@ -28,3 +29,7 @@ class Media(models.Model):
 
     def get_media_type_url(self):
         return reverse('media_app:media_type_list', args=[self.media_type.lower().replace(' ', '-')])
+    
+    class Meta:
+        verbose_name_plural = "Media"
+        ordering = ['-published_date']

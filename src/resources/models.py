@@ -1,11 +1,12 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django_ckeditor_5.fields import CKEditor5Field
 
 class Resource(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    description = models.TextField()
+    description = CKEditor5Field('Text', config_name='extends')
     file = models.FileField(upload_to='resources/')
     published_date = models.DateTimeField(auto_now_add=True)
 
@@ -19,3 +20,6 @@ class Resource(models.Model):
 
     def get_absolute_url(self):
         return reverse('resources:resource_detail', args=[self.slug])
+    
+    class Meta:
+        verbose_name_plural = "Resources"

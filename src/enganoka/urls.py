@@ -35,7 +35,6 @@ urlpatterns = [
     path('careers/', include('careers.urls')),
     path('gender-and-green/', include('gender_and_green.urls')),
     path('get_involved/', include('get_involved.urls')),
-    # path('contact/', include('pages.urls')),
     path('safeguard-policy/', include('safeguard_policy.urls')),
     path('privacy-policy/', include('privacy_policy.urls')),
     path('terms-and-conditions/', include('terms_and_conditions.urls')),

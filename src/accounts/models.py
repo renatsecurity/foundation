@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
 from django.contrib.auth import get_user_model
+from django_ckeditor_5.fields import CKEditor5Field
 from simple_history.models import HistoricalRecords
 
 User = get_user_model()
@@ -14,6 +15,9 @@ class UserActivity(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.action} ({self.timestamp})"
+    
+    class Meta:
+        verbose_name_plural = "User Activities"
 
 
 class CustomUser(AbstractUser):
@@ -37,14 +41,18 @@ class CustomUser(AbstractUser):
         return self.username
     
     class Meta:
+        verbose_name_plural = "Custom Users"
         ordering = ['username']
 
 
 class Notification(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    message = models.TextField()
+    message = CKEditor5Field('Text', config_name='extends')
     is_read = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.user.username} - {self.message[:20]}"
+    
+    class Meta:
+        verbose_name_plural = "Notifications"

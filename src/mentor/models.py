@@ -21,3 +21,6 @@ class Mentor(models.Model):
 
     def get_absolute_url(self):
         return reverse('mentor_detail', args=[self.slug])
+    
+    class Meta:
+        verbose_name_plural = "Mentors"

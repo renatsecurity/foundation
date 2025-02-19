@@ -44,6 +44,7 @@ urlpatterns = [
     path('resources/', include('resources.urls')),
     path('media_urls/', include('media_app.urls')),
     path('alumni/', include('alumni.urls')),
+    path('faqs/', include('faqs.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
     path("ckeditor5/", include('django_ckeditor_5.urls')),
     path('tinymce/', include('tinymce.urls')),

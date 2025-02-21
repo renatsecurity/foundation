@@ -19,12 +19,7 @@
                   <span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
               </a>
               <ul>
-                  <li><a href="{% url 'about_mission_vision' %}" class="{% if request.path == '/about-mission-vision/' %}active{% endif %}">Mission & Vision</a></li>
                   <li><a href="{% url 'about_corporate_profile' %}" class="{% if request.path == '/about-corporate-profile/' %}active{% endif %}">Corporate Profile</a></li>
-                  <li><a href="{% url 'about_partners' %}" class="{% if request.path == '/about-partners/' %}active{% endif %}">Partners</a></li>
-                  <li><a href="{% url 'about_mentors' %}" class="{% if request.path == '/about-mentors/' %}active{% endif %}">Mentors</a></li>
-                  <li><a href="{% url 'about_get_involved' %}" class="{% if request.path == '/about-get-involved/' %}active{% endif %}">Get Involved</a></li>
-                  <li><a href="{% url 'about_upcoming_events' %}" class="{% if request.path == '/about-upcoming-events/' %}active{% endif %}">Upcoming Events</a></li>
               </ul>
           </li>
       

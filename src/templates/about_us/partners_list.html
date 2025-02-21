@@ -1,9 +1,0 @@
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>Our Partners</h1>
-    <ul>
-        {% for partner in partners %}
-            <li><strong>{{ partner.name }}</strong> - <a href="{{ partner.website }}">{{ partner.website }}</a></li>
-        {% endfor %}
-    </ul>
-{% endblock %}

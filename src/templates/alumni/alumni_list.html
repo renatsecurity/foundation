@@ -1,9 +1,51 @@
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>Alumni Network</h1>
-    <ul>
-        {% for alumni in alumni_members %}
-            <li><a href="{{ alumni.get_absolute_url }}">{{ alumni.name }}</a> - {{ alumni.occupation }}</li>
-        {% endfor %}
-    </ul>
-{% endblock %}
+{% extends "../pages/base.html" %}
+{% block title %}Alumni -{% endblock title %}
+
+{% block bodyClass %}blog-page{% endblock bodyClass %}
+
+{% block main %}
+  <main class="main">
+
+    <div style="margin-top: 0; background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 50%), url('/static/assets/img/about.jpg'); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat; height: 250px;" data-aos="fade-up">
+        <h3 style="padding-left: 35px; padding-top: 70px; color: rgb(30, 216, 30); text-align: left; font-family: Mulish, Sans-serif; font-size: 35px; font-weight: 700;
+        text-transform: uppercase; width: 50%;">We are The Leading Philanthropy Empowering Young Africans Across All 54 African Countries</h3>
+      </div>
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+        <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Alumni Who Have Benefited From Our Programs</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+            {% for alumni in alumni_members %}
+
+          <div class="col-lg-4">
+            <article class="position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{{ alumni.profile_picture.url }}" class="img-fluid" alt="{{ alumni.name }}">
+                <span class="post-date">{{ alumni.occupation }} - {{ alumni.graduation_year }}</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">{{ alumni.name }}</h3>
+
+                <p>
+                  {{ alumni.bio }}
+                </p>
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+          {% endfor %}
+        </div>
+      </div>
+
+    </section><!-- /Blog Posts Section -->
+
+  </main>
+{% endblock main %}

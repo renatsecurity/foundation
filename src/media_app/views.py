@@ -1,17 +1,32 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Media
+from .models import News, PressRelease, Podcast
 
 
-def media_list(request):
-    media_items = Media.objects.all().order_by('-published_date')
-    return render(request, 'media_app/media_list.html', {'media_items': media_items})
+def news_list(request):
+    news = News.objects.all()
+    return render(request, 'media_app/blog.html', {'news': news})
 
 
-def media_detail(request, slug):
-    media = get_object_or_404(Media, slug=slug)
-    return render(request, 'media_app/media_detail.html', {'media': media})
+def news_detail(request, slug):
+    news_item = get_object_or_404(News, slug=slug)
+    return render(request, 'media_app/blog-details.html', {'news_item': news_item})
 
 
-def media_type_list(request, media_type):
-    media_items = Media.objects.filter(media_type=media_type.replace('-', ' ')).order_by('-published_date')
-    return render(request, 'media_app/media_type_list.html', {'media_items': media_items, 'media_type': media_type.replace('-', ' ')})
+def press_release_list(request):
+    press_releases = PressRelease.objects.all()
+    return render(request, 'media_app/press_release_list.html', {'press_releases': press_releases})
+
+
+def press_release_detail(request, slug):
+    press_release = get_object_or_404(PressRelease, slug=slug)
+    return render(request, 'media_app/press_release_detail.html', {'press_release': press_release})
+
+
+def podcast_list(request):
+    podcasts = Podcast.objects.all()
+    return render(request, 'media_app/podcast_list.html', {'podcasts': podcasts})
+
+
+def podcast_detail(request, slug):
+    podcast = get_object_or_404(Podcast, slug=slug)
+    return render(request, 'media_app/podcast_detail.html', {'podcast': podcast})

@@ -1,9 +1,0 @@
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>Media</h1>
-    <ul>
-        {% for media in media_items %}
-            <li><a href="{{ media.get_absolute_url }}">{{ media.title }}</a> (<a href="{{ media.get_media_type_url }}">{{ media.media_type }}</a> - Published: {{ media.published_date }})</li>
-        {% endfor %}
-    </ul>
-{% endblock %}

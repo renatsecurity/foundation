@@ -1,3 +1,79 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block title %}Our Partners -{%endblock title %}
+
+{% block bodyClass %}blog-page{% endblock bodyClass %}
+
+{% block main %}
+  <main class="main">
+
+    <div style="margin-top: 0; background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 50%), url('/static/assets/img/about.jpg'); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat; height: 250px;" data-aos="fade-up">
+        <h3 style="padding-left: 35px; padding-top: 70px; color: rgb(30, 216, 30); text-align: left; font-family: Mulish, Sans-serif; font-size: 35px; font-weight: 700;
+        text-transform: uppercase; width: 50%;">OUR PARTNERS</h3>
+        <p>We are The Leading Philanthropy Empowering Young Africans Across All 54 African Countries</p>
+      </div>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Our Partners</h2>
+        </div><!-- End Section Title -->
+  
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+  
+          <div class="row g-0 clients-wrap">
+            {% for group in groups %}
+                <h2>{{ group.title }}</h2>
+                <p>{{ group.description }}</p>
+                {% for partner in group.partners.all %}
+                <a href="{{ partner.website }}" target="_blank">
+                    <div class="col-xl-3 col-md-4 client-logo">
+                    <img src="{{ partner.image.url }}" class="img-fluid" alt="{{ partner.name }}">
+                    </div><!-- End Client Item -->
+                </a>
+                {% endfor %}
+            {% endfor %}
+
+            <div class="col-xl-3 col-md-4 client-logo">
+              <img src="{% static 'assets/img/clients/client-2.png' %}" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+  
+            <div class="col-xl-3 col-md-4 client-logo">
+              <img src="{% static 'assets/img/clients/client-3.png' %}" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+  
+            <div class="col-xl-3 col-md-4 client-logo">
+              <img src="{% static 'assets/img/clients/client-4.png' %}" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+  
+            <div class="col-xl-3 col-md-4 client-logo">
+              <img src="{% static 'assets/img/clients/client-5.png' %}" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+  
+            <div class="col-xl-3 col-md-4 client-logo">
+              <img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+  
+            <div class="col-xl-3 col-md-4 client-logo">
+              <img src="{% static 'assets/img/clients/client-7.png' %}" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+  
+            <div class="col-xl-3 col-md-4 client-logo">
+              <img src="{% static 'assets/img/clients/client-8.png' %}" class="img-fluid" alt="">
+            </div><!-- End Client Item -->
+  
+          </div>
+  
+        </div>
+  
+      </section><!-- /Clients Section -->
+  </main>
+{% endblock main %}
+
+
+
 {% extends '../pages/base.html' %}
 {% block content %}
     <h1>Our Partners</h1>

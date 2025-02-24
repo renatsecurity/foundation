@@ -3,8 +3,8 @@ from .models import SafeguardPolicy
 
 
 def policy_list(request):
-    policies = SafeguardPolicy.objects.all().order_by('-last_updated')
-    return render(request, 'safeguard_policy/policy_list.html', {'policies': policies})
+    policy = SafeguardPolicy.objects.order_by('-last_updated').first()
+    return render(request, 'safeguard_policy/policy_list.html', {'policy': policy})
 
 
 def policy_detail(request, id):

@@ -1,9 +1,97 @@
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>Impact Stories</h1>
-    <ul>
-        {% for impact in impacts %}
-            <li><a href="{{ impact.get_absolute_url }}">{{ impact.title }}</a> - {{ impact.date }}</li>
-        {% endfor %}
-    </ul>
-{% endblock %}
+{% extends "../pages/base.html" %}
+{% block title %}Impact -{%endblock title %}
+
+{% block bodyClass %}blog-page{% endblock bodyClass %}
+
+{% block main %}
+  <main class="main">
+
+    <div style="margin-top: 0; background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 50%), url('/static/assets/img/about.jpg'); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat; height: 250px;" data-aos="fade-up">
+        <h3 style="padding-left: 35px; padding-top: 70px; color: rgb(30, 216, 30); text-align: left; font-family: Mulish, Sans-serif; font-size: 35px; font-weight: 700;
+        text-transform: uppercase; width: 50%;">IMPACT STORIES</h3>
+        <p>We are The Leading Philanthropy Empowering Young Africans Across All 54 African Countries</p>
+      </div>
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+
+      <div class="container">
+        <div class="row gy-4">
+            {% for impact in impacts %}
+
+          <div class="col-lg-4">
+            <article class="position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{{ impact.image.url }}" class="img-fluid" alt="{{ impact.title }}">
+                <span class="post-date">{{ impact.date }}</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">{{ impact.title }}</h3>
+
+                <p>
+                  {{ impact.description|safe|truncatewords:50 }}
+                </p>
+
+                <hr>
+
+                <a href="{{ impact.get_absolute_url }}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+          {% endfor %}
+
+        </div>
+      </div>
+
+    </section><!-- /Blog Posts Section -->
+
+    <section>
+
+        <!-- Country Impact Chart -->
+        <h2>Impact by Country</h2>
+        <canvas id="countryChart"></canvas>
+
+        <!-- Category Impact Chart -->
+        <h2>Impact by Category</h2>
+        <canvas id="categoryChart"></canvas>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            function fetchChartData(url, chartId, label, backgroundColor) {
+                fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const ctx = document.getElementById(chartId).getContext('2d');
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: data.labels,
+                            datasets: [{
+                                label: label,
+                                data: data.values,
+                                backgroundColor: backgroundColor,
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                y: { beginAtZero: true }
+                            }
+                        }
+                    });
+                });
+            }
+
+            fetchChartData("{% url 'country_chart_data' %}", "countryChart", "Country Impact", "rgba(75, 192, 192, 0.5)");
+            fetchChartData("{% url 'category_chart_data' %}", "categoryChart", "Category Impact", "rgba(255, 99, 132, 0.5)");
+        </script>
+    </section>
+
+  </main>
+{% endblock main %}

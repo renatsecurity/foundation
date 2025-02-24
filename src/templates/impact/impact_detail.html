@@ -1,9 +1,56 @@
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>{{ impact.title }}</h1>
-    <p>{{ impact.description }}</p>
-    <p><strong>Date:</strong> {{ impact.date }}</p>
-    {% if impact.image %}
-        <img src="{{ impact.image.url }}" alt="{{ impact.title }}">
-    {% endif %}
-{% endblock %}
+{% extends "../pages/base.html" %}
+{% block title %}{{ impact.title }} -{%endblock title %}
+
+{% block bodyClass %}blog-details-page{% endblock bodyClass %}
+
+{% block main %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Impact Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Impact</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <!-- Blog Details Section -->
+          <section id="blog-details" class="blog-details section">
+            <div class="container">
+
+              <article class="article">
+
+                <div class="post-img">
+                  <img src="{{ impact.image.url }}" alt="{{ impact.title }}" class="img-fluid">
+                </div>
+
+                <h2 class="title">{{ impact.title }}</h2>
+
+                <div class="content">
+                  <p>
+                    {{ impact.description|safe }}
+                  </p>
+                  <p><strong>Date:</strong> {{ impact.date }}</p>
+                </div><!-- End post content -->
+              </article>
+
+            </div>
+          </section><!-- /Blog Details Section -->
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+{% endblock main %}

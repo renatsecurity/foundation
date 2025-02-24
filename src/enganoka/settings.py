@@ -88,6 +88,7 @@ INSTALLED_APPS = [
     'privacy_policy.apps.PrivacyPolicyConfig',
     'safeguard_policy.apps.SafeguardPolicyConfig',
     'terms_and_conditions.apps.TermsAndConditionsConfig',
+    'testimonials.apps.TestimonialsConfig',
 ]
 
 MIDDLEWARE = [

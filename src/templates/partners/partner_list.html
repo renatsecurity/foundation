@@ -71,19 +71,3 @@
       </section><!-- /Clients Section -->
   </main>
 {% endblock main %}
-
-
-
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>Our Partners</h1>
-    {% for group in groups %}
-        <h2>{{ group.title }}</h2>
-        <p>{{ group.description }}</p>
-        <ul>
-            {% for partner in group.partners.all %}
-                <li><a href="{{ partner.get_absolute_url }}">{{ partner.name }}</a> - <a href="{{ partner.website }}" target="_blank">Website</a></li>
-            {% endfor %}
-        </ul>
-    {% endfor %}
-{% endblock %}

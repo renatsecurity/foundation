@@ -1,9 +1,56 @@
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>{{ mentor.name }}</h1>
-    <p><strong>Expertise:</strong> {{ mentor.expertise }}</p>
-    <p>{{ mentor.bio }}</p>
-    {% if mentor.image %}
-        <img src="{{ mentor.image.url }}" alt="{{ mentor.name }}">
-    {% endif %}
-{% endblock %}
+{% extends "../pages/base.html" %}
+{% block title %}{{ mentor.name }} -{%endblock title %}
+
+{% block bodyClass %}blog-details-page{% endblock bodyClass %}
+
+{% block main %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Mentor Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Mentor</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <!-- Blog Details Section -->
+          <section id="blog-details" class="blog-details section">
+            <div class="container">
+
+              <article class="article">
+
+                <div class="post-img">
+                  <img src="{{ mentor.image.url }}" alt="{{ mentor.name }}" class="img-fluid">
+                </div>
+
+                <h2 class="title">{{ mentor.name }}</h2>
+
+                <div class="content">
+                    <p><strong>Expertise:</strong> {{ mentor.expertise }}</p>
+                  <p>
+                    {{ mentor.bio|safe }}
+                  </p>
+                </div><!-- End post content -->
+              </article>
+
+            </div>
+          </section><!-- /Blog Details Section -->
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+{% endblock main %}

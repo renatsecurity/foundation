@@ -1,16 +1,61 @@
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>Gender & Green Initiatives</h1>
-    <h2>Categories</h2>
-    <ul>
-        {% for category in categories %}
-            <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
-        {% endfor %}
-    </ul>
-    <h2>Articles</h2>
-    <ul>
-        {% for article in articles %}
-            <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a> (Published: {{ article.published_date }})</li>
-        {% endfor %}
-    </ul>
-{% endblock %}
+{% extends "../pages/base.html" %}
+{% block title %}Blog -{%endblock title %}
+
+{% block bodyClass %}blog-page{% endblock bodyClass %}
+
+{% block main %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Blog</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Blog</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+
+      <div class="container">
+        <div class="row gy-4">
+          {% for article in articles %}
+
+          <div class="col-lg-4">
+            <article class="position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{{ article.image.url }}" class="img-fluid" alt="{{ article.title }}">
+                <span class="post-date">{{ article.published_date }}</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">{{ article.title }}</h3>
+
+                <p>
+                  {{ article.content|safe|truncatewords:50 }}
+                </p>
+
+                <hr>
+
+                <a href="{{ article.get_absolute_url }}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+          {% endfor %}
+
+        </div>
+      </div>
+
+    </section><!-- /Blog Posts Section -->
+
+  </main>
+{% endblock main %}

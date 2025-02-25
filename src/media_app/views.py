@@ -101,8 +101,13 @@ def news_detail(request, slug):
 
 
 def press_release_list(request):
-    press_releases = PressRelease.objects.all()
-    return render(request, 'media_app/press_release_list.html', {'press_releases': press_releases})
+    press_releases = PressRelease.objects.filter(is_published=True)
+    # Paginate news
+    paginator = Paginator(press_releases, 10)  # 10 items per page
+
+    page_number = request.GET.get('page')  # Get current page number
+    page_obj = paginator.get_page(page_number)  # Get page object
+    return render(request, 'media_app/press_release_list.html', {'page_obj': page_obj})
 
 
 def press_release_detail(request, slug):
@@ -112,7 +117,12 @@ def press_release_detail(request, slug):
 
 def podcast_list(request):
     podcasts = Podcast.objects.all()
-    return render(request, 'media_app/podcast_list.html', {'podcasts': podcasts})
+    # Paginate news
+    paginator = Paginator(podcasts, 10)  # 10 items per page
+
+    page_number = request.GET.get('page')  # Get current page number
+    page_obj = paginator.get_page(page_number)  # Get page object
+    return render(request, 'media_app/podcast_list.html', {'page_obj': page_obj})
 
 
 def podcast_detail(request, slug):

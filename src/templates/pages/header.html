@@ -45,10 +45,11 @@
                   <span>Media</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
               </a>
               <ul>
-                  <li><a href="{% url 'research_list' %}" class="{% if request.path == '/research/' %}active{% endif %}">Research & Publications</a></li>
-                  <li><a href="#">News</a></li>
                   <li><a href="{% url 'event_list' %}" class="{% if request.path == '/events/' %}active{% endif %}">Events</a></li>
-                  <li><a href="#">Podcast</a></li>
+                  <li><a href="{% url 'media_app:news_list' %}" class="{% if request.path == '/news/' %}active{% endif %}">News</a></li>
+                  <li><a href="{% url 'media_app:podcast_list' %}" class="{% if request.path == '/podcasts/' %}active{% endif %}">Podcast</a></li>
+                  <li><a href="{% url 'media_app:press_release_list' %}" class="{% if request.path == '/press-releases/' %}active{% endif %}">Press Release</a></li>
+                  <li><a href="{% url 'research_list' %}" class="{% if request.path == '/research/' %}active{% endif %}">Research & Publications</a></li>
               </ul>
           </li>
       

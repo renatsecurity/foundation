@@ -9,6 +9,10 @@ app_name = 'media_app'
 
 urlpatterns = [
     path('news/', news_list, name='news_list'),
+    path(
+        "news/tags/<slug:tag_slug>/",
+        news_list, name="news_list_by_tag"
+    ),
     path('news/<slug:slug>/', news_detail, name='news_detail'),
 
     path('press-releases/', press_release_list, name='press_release_list'),

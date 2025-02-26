@@ -957,6 +957,195 @@ section,
   background: var(--accent-color);
 }
 
+/* Hero 1 */
+
+.hero-1 {
+  padding: 0;
+}
+
+.hero-1 .carousel {
+  width: 60%;
+  min-height: calc(50vh - 75px);
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+@media (max-height: 500px),
+(max-width: 1200px) {
+  .hero-1 .carousel {
+    min-height: calc(50vh - 48px);
+  }
+}
+
+
+.hero-1 .carousel-item {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero-1 .container {
+  background: color-mix(in srgb, var(--surface-color), transparent 40%);
+  position: relative;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 50px;
+  border-top: 4px solid var(--accent-color);
+  border-bottom: 4px solid var(--accent-color);
+  z-index: 3;
+}
+
+@media (max-width: 1200px) {
+  .hero-1 .container {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+.hero-1 h2 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .hero-1 h2 {
+    font-size: 30px;
+  }
+}
+
+.hero-1 .btn-get-started {
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  transition: 0.5s;
+  margin: 10px;
+  border-radius: 4px;
+  color: var(--contrast-color);
+  border: 2px solid var(--accent-color);
+}
+
+.hero-1 .btn-get-started:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.hero-1 .carousel-control-prev {
+  justify-content: start;
+}
+
+@media (min-width: 640px) {
+  .hero-1 .carousel-control-prev {
+    padding-left: 15px;
+  }
+}
+
+.hero-1 .carousel-control-next {
+  justify-content: end;
+}
+
+@media (min-width: 640px) {
+  .hero-1 .carousel-control-next {
+    padding-right: 15px;
+  }
+}
+
+.hero-1 .carousel-control-next-icon,
+.hero-1 .carousel-control-prev-icon {
+  background: none;
+  font-size: 26px;
+  line-height: 0;
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 50px;
+  color: var(--contrast-color);
+  transition: 0.3s;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-1 .carousel-control-prev,
+.hero-1 .carousel-control-next {
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+.hero-1 .carousel-control-prev:focus,
+.hero-1 .carousel-control-next:focus {
+  opacity: 0.5;
+}
+
+.hero-1 .carousel-control-prev:hover,
+.hero-1 .carousel-control-next:hover {
+  opacity: 0.9;
+}
+
+.hero-1 .carousel-control-prev:hover .carousel-control-next-icon,
+.hero-1 .carousel-control-prev:hover .carousel-control-prev-icon,
+.hero-1 .carousel-control-next:hover .carousel-control-next-icon,
+.hero-1 .carousel-control-next:hover .carousel-control-prev-icon {
+  background: var(--accent-color);
+  color: var(--default-color);
+}
+
+.hero-1 .carousel-indicators li {
+  cursor: pointer;
+  background: var(--default-color);
+  overflow: hidden;
+  border: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.hero-1 .carousel-indicators li.active {
+  opacity: 1;
+  background: var(--accent-color);
+}
+
+
+/* Stat Section */
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 20px;
+}
+.stats-item {
+  text-align: center;
+  padding: 5px;
+  width: auto;
+  /* min-width: 150px; */
+}
+.stats-item i {
+  font-size: 40px;
+  color: #1bbd36;
+}
+.purecounter {
+  font-size: 32px;
+  font-weight: bold;
+  display: block;
+  margin: 10px 0;
+}
+
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -1071,7 +1260,7 @@ section,
   padding: 60px 30px;
   text-align: center;
   transition: 0.3s;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .services .service-item .icon {
@@ -1115,7 +1304,7 @@ section,
 }
 
 .services .service-item:hover {
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 25px 5px 35px 5px rgba(0, 0, 0, 0.1);
 }
 
 .services .service-item.item-cyan i {

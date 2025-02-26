@@ -11,4 +11,14 @@
 
 <!-- Main JS File -->
 <script src="{% static 'assets/js/main.js' %}"></script>
+<script>
+    AOS.init();
+</script>
+ <!-- Correct PureCounter.js -->
+ <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
+ <script>
+   document.addEventListener("DOMContentLoaded", function () {
+     new PureCounter();
+   });
+ </script>
 {% block extra_script %}{% endblock extra_script %}

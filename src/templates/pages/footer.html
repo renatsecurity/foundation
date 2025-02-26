@@ -7,10 +7,18 @@
             <span class="sitename"><small>Engineer Michael Anoka</small><p style="text-align: center; color: rgb(30, 216, 30);">Foundation</p></span>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <h4>For Supports and Enquiries</h4>
+            <p class="mt-3">
+              <strong>Phone:</strong> 
+              <span><a href="tel:+1 5589 55488 55">+1 5589 55488 55</a></span>
+            </p>
+            <p>
+              <strong>Email:</strong> 
+              <span><a href="mailto:info@example.com">info@example.com</a></span>
+            </p>
+          </div>
+          <div class="footer-contact pt-3">
+            <h4>We’re Active on Social Media</h4>
           </div>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -20,31 +28,45 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+        <div class="col-lg col-md footer-links">
+          <h4>About Us</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="{% url 'about_us' %}">Mission & Vision</a></li>
+            <li><a href="{% url 'about_corporate_profile' %}">Corporate Profile</a></li>
+            <li><a href="{% url 'mentor_list' %}">Mentors</a></li>
+            <li><a href="{% url 'partner_list' %}">Partners</a></li>
+            <li><a href="{% url 'get_involved_list' %}">Get Involved</a></li>
+            <li><a href="{% url 'our_approach_list' %}">Our Approach</a></li>
+            <li><a href="{% url 'event_list' %}">Up Coming Events</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+        <div class="col-lg col-md footer-links">
+          <h4>Our Programmes</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="{% url 'impact:impact_list' %}">Our Impact</a></li>
+            <li><a href="{% url 'gender_and_green_list' %}">Be Green</a></li>
+            <li><a href="{% url 'alumni:alumni_list' %}">Be An Alumni</a></li>
+            <li><a href="{% url 'faq_list' %}">FAQs</a></li>
+            <li><a href="#">Past Programmes</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
+        <div class="col-lg col-md footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="{% url 'research_list' %}">Research</a></li>
+            <li><a href="{% url 'resources:resource_list' %}">Useful Files</a></li>
+            <li><a href="{% url 'career_list' %}">Careers</a></li>
+            <li><a href="{% url 'media_app:news_list' %}">News</a></li>
+            <li><a href="{% url 'media_app:podcast_list' %}">Podcast</a></li>
+            <li><a href="{% url 'media_app:press_release_list' %}">Press Release</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-newsletter">
+          <h4>Stay Updated</h4>
+          <p>Stay up to date on our entrepreneurs, events, research and more. Subscribe!</p>
           <form action="" method="post" class="php-email-form">
             <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
             <div class="loading">Loading</div>
@@ -56,8 +78,24 @@
       </div>
     </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Company</strong> <span>All Rights Reserved</span></p>
+    <div class="container copyright mt-4">
+      <p>
+        &copy; 
+        <span id="copyright-year"></span> 
+        <strong class="px-1 sitename">Engineer Michael Anoka Foundation</strong> 
+        <span>All Rights Reserved</span>
+        <span class="float-end">
+          <a href="{% url 'terms_and_conditions' %}"  style="padding-right: 20px; margin-right: 4px;">Terms & Conditions  </a>
+          <a href="{% url 'safeguard_policy_list' %}"  style="padding-right: 20px; margin-right: 4px;">Safeguarding Policy  </a>
+          <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
+        </span>
+      </p>
     </div>
+
+    <script>
+      // Get the current year
+      const currentYear = new Date().getFullYear();
+      document.getElementById('copyright-year').textContent = currentYear;
+    </script>
 
 </footer>

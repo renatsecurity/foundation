@@ -9,6 +9,11 @@ class Mentor(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     bio = CKEditor5Field('Text', config_name='extends')
     expertise = models.CharField(max_length=255)
+    designation = models.CharField(max_length=255, blank=True, null=True)
+    facebook_link = models.URLField(blank=True, null=True)
+    twitter_link = models.URLField(blank=True, null=True)
+    linkedin_link = models.URLField(blank=True, null=True)
+    instagram_link = models.URLField(blank=True, null=True)
     image = models.ImageField(upload_to='mentor_images/', blank=True, null=True)
 
     def __str__(self):

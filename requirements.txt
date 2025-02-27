@@ -13,3 +13,4 @@ django-extensions==3.2.3
 matplotlib==3.10.0
 django-simple-history==3.8.0
 django-chartjs==2.3.0
+reportlab==4.3.1

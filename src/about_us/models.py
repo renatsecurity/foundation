@@ -9,6 +9,7 @@ class AboutUs(models.Model):
     content = CKEditor5Field('Text', config_name='extends')
     image = models.ImageField(upload_to='about_us/', blank=True, null=True)
     last_updated = models.DateTimeField(auto_now=True)
+    youtube_video = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -17,23 +18,27 @@ class AboutUs(models.Model):
         verbose_name_plural = "About Us"
 
 
-class CorporateProfile(models.Model):
-    title = models.CharField(max_length=255, default="Corporate Profile")
-    slug = models.SlugField(unique=True, blank=True)
-    content = CKEditor5Field('Text', config_name='extends')
-    image = models.ImageField(upload_to='corporate_profile/', blank=True, null=True)
+class MissionAndVision(models.Model):
+    title = models.CharField(max_length=255, unique=True)
+    description = CKEditor5Field('Text', config_name='extends')
+    image = models.ImageField(upload_to='mission_vision/', blank=True, null=True)
     last_updated = models.DateTimeField(auto_now=True)
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
-        return reverse('about_corporate_profile', kwargs={'slug': self.slug})
+    class Meta:
+        verbose_name_plural = "Mission and Vision"
+
+
+class CorporateProfile(models.Model):
+    title = models.CharField(max_length=255, default="Corporate Profile")
+    content = CKEditor5Field('Text', config_name='extends')
+    image = models.ImageField(upload_to='corporate_profile/', blank=True, null=True)
+    last_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
     
     class Meta:
         verbose_name_plural = "Corporate Profiles"

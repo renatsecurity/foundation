@@ -5,7 +5,7 @@
       <a href="{% url 'pages:index' %}" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="{% static 'assets/img/logo.png' %}" alt="The Engineer Michael Anoka Foundation">
-        <h1 class="sitename"><small>Engineer Michael Anoka</small><p style="text-align: center; color: rgb(30, 216, 30);">Foundation</p></h1><span></span>
+        <h1 class="sitename"><small>Engr. Michael Anoka</small><p style="text-align: center; color: rgb(30, 216, 30);">Foundation</p></h1><span></span>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -64,10 +64,12 @@
                   <li><a href="{% url 'get_involved_list' %}" class="{% if request.path == '/get-involved/' %}active{% endif %}">Other Ways To Get Involved</a></li>
               </ul>
           </li>
+          <li>
+            <a href="{% url 'login' %}" class="{% if request.path == '/login/' %}active{% endif %}" style="width: 110px; margin-left: 40px; padding: 4px; border: 2px solid darkgreen; border-radius: 4px;">MAFConnect</a>
+          </li>
       </ul>
       
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a href="{% url 'login' %}" class="{% if request.path == '/login/' %}active{% endif %}" style="margin-left: 40px; padding: 4px; border: 2px solid darkgreen; border-radius: 4px;">MAFConnect</a>
     </div>
 </header>

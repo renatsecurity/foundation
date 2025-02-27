@@ -35,39 +35,52 @@
                 </a>
                 {% endfor %}
             {% endfor %}
-
-            <div class="col-xl-3 col-md-4 client-logo">
-              <img src="{% static 'assets/img/clients/client-2.png' %}" class="img-fluid" alt="">
-            </div><!-- End Client Item -->
-  
-            <div class="col-xl-3 col-md-4 client-logo">
-              <img src="{% static 'assets/img/clients/client-3.png' %}" class="img-fluid" alt="">
-            </div><!-- End Client Item -->
-  
-            <div class="col-xl-3 col-md-4 client-logo">
-              <img src="{% static 'assets/img/clients/client-4.png' %}" class="img-fluid" alt="">
-            </div><!-- End Client Item -->
-  
-            <div class="col-xl-3 col-md-4 client-logo">
-              <img src="{% static 'assets/img/clients/client-5.png' %}" class="img-fluid" alt="">
-            </div><!-- End Client Item -->
-  
-            <div class="col-xl-3 col-md-4 client-logo">
-              <img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt="">
-            </div><!-- End Client Item -->
-  
-            <div class="col-xl-3 col-md-4 client-logo">
-              <img src="{% static 'assets/img/clients/client-7.png' %}" class="img-fluid" alt="">
-            </div><!-- End Client Item -->
-  
-            <div class="col-xl-3 col-md-4 client-logo">
-              <img src="{% static 'assets/img/clients/client-8.png' %}" class="img-fluid" alt="">
-            </div><!-- End Client Item -->
   
           </div>
   
         </div>
   
       </section><!-- /Clients Section -->
+
+      {% if alumni %}
+     <!-- Blog Posts Section -->
+     <section id="blog-posts" class="blog-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Entrepreneurs That Benefit From Our Partners</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-4">
+          {% for article in alumni %}
+
+          <div class="col-lg-4">
+            <article class="position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{{ article.profile_picture.url }}" class="img-fluid" alt="{{ article.name }}">
+                <span class="post-date">{{ article.occupation }}</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">{{ article.name }}</h3>
+
+                <p>
+                  {{ article.bio|safe }}
+                </p>
+
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+          {% endfor %}
+
+        </div>
+      </div>
+
+    </section><!-- /Blog Posts Section -->
+    {% endif %}
   </main>
 {% endblock main %}

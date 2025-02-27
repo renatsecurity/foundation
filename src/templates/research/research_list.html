@@ -1,16 +1,61 @@
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>Research Papers</h1>
-    <h2>Categories</h2>
-    <ul>
-        {% for category in categories %}
-            <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
-        {% endfor %}
-    </ul>
-    <h2>All Research Papers</h2>
-    <ul>
-        {% for paper in research_papers %}
-            <li><a href="{{ paper.get_absolute_url }}">{{ paper.title }}</a> - {{ paper.author }} ({{ paper.publication_date }})</li>
-        {% endfor %}
-    </ul>
-{% endblock %}
+{% extends "../pages/base.html" %}
+{% block title %}Research -{%endblock title %}
+
+{% block bodyClass %}blog-page{% endblock bodyClass %}
+
+{% block main %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Research</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Research</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Research Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+
+      <div class="container">
+        <div class="row gy-4">
+          {% if research_papers|length == 0 %}
+          <div class="col-12 text-center">
+            <h2>No research available.</h2>
+          </div>
+          {% endif %}
+          {% for paper in research_papers %}
+
+          <div class="col-lg-4">
+            <article class="position-relative h-100">
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">{{ paper.title|title }}</h3>
+
+                <p>
+                  {{ paper.abstract|safe|truncatewords:50 }}
+                </p>
+
+                <hr>
+
+                <a href="{{ paper.get_absolute_url }}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+          {% endfor %}
+
+        </div>
+      </div>
+
+    </section><!-- /Research Section -->
+
+  </main>
+{% endblock main %}

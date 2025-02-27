@@ -9,11 +9,11 @@
     <!-- Page Title -->
     <div class="page-title accent-background">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Gender and Green Details</h1>
+        <h1 class="mb-2 mb-lg-0">Get Involved Details</h1>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Gender and Green</li>
+            <li class="current">Get Involved</li>
           </ol>
         </nav>
       </div>
@@ -56,13 +56,3 @@
 
   </main>
 {% endblock main %}
-
-
-
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>{{ opportunity.title }}</h1>
-    <p><strong>Category:</strong> <a href="{{ opportunity.category.get_absolute_url }}">{{ opportunity.category.name }}</a></p>
-    <p><strong>Description:</strong> {{ opportunity.description }}</p>
-    
-{% endblock %}

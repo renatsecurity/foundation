@@ -12,6 +12,8 @@ class Alumni(models.Model):
     bio = CKEditor5Field('Text', config_name='extends')
     linkedin_url = models.URLField(blank=True, null=True)
     profile_picture = models.ImageField(upload_to='alumni_pictures/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
@@ -26,3 +28,4 @@ class Alumni(models.Model):
     
     class Meta:
         verbose_name_plural = "Alumni"
+        ordering = ['-graduation_year']

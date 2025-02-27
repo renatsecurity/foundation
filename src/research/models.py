@@ -27,9 +27,10 @@ class Research(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
     abstract = CKEditor5Field('Text', config_name='extends')
+    image = models.ImageField(upload_to='research_images/', blank=True, null=True)
     author = models.CharField(max_length=255)
     publication_date = models.DateField()
-    document = models.FileField(upload_to='research_papers/')
+    document = models.FileField(upload_to='research_papers/', blank=True, null=True)
     category = models.ForeignKey(ResearchCategory, on_delete=models.CASCADE, related_name='research_papers')
 
     def __str__(self):

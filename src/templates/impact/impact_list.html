@@ -50,14 +50,19 @@
 
     </section><!-- /Blog Posts Section -->
 
-    <section>
+    <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
 
-        <!-- Country Impact Chart -->
+      <!-- Country Impact Chart -->
+      <div class="container section-title" data-aos="fade-up">
         <h2>Impact by Country</h2>
+      </div><!-- End Country Impact Title -->
         <canvas id="countryChart"></canvas>
 
         <!-- Category Impact Chart -->
+      <div class="container section-title" data-aos="fade-up">
         <h2>Impact by Category</h2>
+      </div><!-- End Category Impact Title -->
         <canvas id="categoryChart"></canvas>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -88,8 +93,8 @@
                 });
             }
 
-            fetchChartData("{% url 'country_chart_data' %}", "countryChart", "Country Impact", "rgba(75, 192, 192, 0.5)");
-            fetchChartData("{% url 'category_chart_data' %}", "categoryChart", "Category Impact", "rgba(255, 99, 132, 0.5)");
+            fetchChartData("{% url 'impact:country_chart_data' %}", "countryChart", "Country Impact", "rgba(75, 192, 192, 0.5)");
+            fetchChartData("{% url 'impact:category_chart_data' %}", "categoryChart", "Category Impact", "rgba(255, 99, 132, 0.5)");
         </script>
     </section>
 

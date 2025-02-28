@@ -1,9 +1,56 @@
-{% extends '../pages/base.html' %}
-{% block content %}
-    <h1>Resources</h1>
-    <ul>
-        {% for resource in resources %}
-            <li><a href="{{ resource.get_absolute_url }}">{{ resource.title }}</a> (Published: {{ resource.published_date }})</li>
-        {% endfor %}
-    </ul>
-{% endblock %}
+{% extends "../pages/base.html" %}
+{% block title %}Resources -{%endblock title %}
+
+{% block bodyClass %}blog-page{% endblock bodyClass %}
+
+{% block main %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Resources</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Resources</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Resources Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+
+      <div class="container">
+        <div class="row gy-4">
+          {% if resources|length == 0 %}
+          <div class="col-12 text-center">
+            <h2>No resources available.</h2>
+          </div>
+          {% endif %}
+          {% for resource in resources %}
+
+          <div class="col-lg-4">
+            <article class="position-relative h-100">
+
+              <div class="post-content d-flex flex-column">
+
+                <h3 class="post-title">{{ resource.title|title }}</h3>
+                <hr>
+
+                <a href="{{ resource.file.url }}" class="readmore stretched-link"><span>Download Resource</span><i class="bi bi-arrow-down"></i></a>
+
+              </div>
+
+            </article>
+          </div><!-- End post list item -->
+          {% endfor %}
+
+        </div>
+      </div>
+
+    </section><!-- /Resources Section -->
+
+  </main>
+{% endblock main %}

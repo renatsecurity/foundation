@@ -53,12 +53,11 @@
               </div>
               <p>
                 <i class="bi bi-quote quote-icon-left"></i>
-                <span>{{ testimonial.message|truncatewords:20 }}</span>
+                <span>{{ testimonial.message|safe }}</span>
                 <i class="bi bi-quote quote-icon-right"></i>
               </p>
               <p>Region: {{ testimonial.region }}</p>
               <p>Sector: {{ testimonial.sector }}</p>
-              <a href="{% url 'testimonial_detail' testimonial.slug %}">Read More</a>
             </div>
           </div><!-- End testimonial item -->
           {% endfor %}

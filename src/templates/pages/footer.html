@@ -67,8 +67,16 @@
         <div class="col-lg-4 col-md-6 footer-newsletter">
           <h4>Stay Updated</h4>
           <p>Stay up to date on our entrepreneurs, events, research and more. Subscribe!</p>
-          <form action="" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+          <form enctype="multipart/form-data" action="/newsletter/{{ latest_newsletter_title }}/subscribe/" method="post" class="php-email-form">
+            {% csrf_token %}
+            <div class="newsletter-form">
+              <input type="email" name="email">
+              <input type="submit" value="Subscribe">
+            </div>
+            <p>
+              <input type="checkbox" name="subscribe" value="1" required>
+              I agree to receive emails from the Engr. Michael Anoka Foundation
+            </p>
             <div class="loading">Loading</div>
             <div class="error-message"></div>
             <div class="sent-message">Your subscription request has been sent. Thank you!</div>

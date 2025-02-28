@@ -18,11 +18,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from .robots import robots_txt
 
 
 admin.site.site_header = 'The Engineer Anoka Foundation Admin Panel'
 admin.site.site_title = 'The Engineer Anoka Foundation administration'
 admin.site.index_title = 'Welcome to The Engineer Anoka Foundation Admin Panel'
+
+handler404 = 'pages.views.custom_error_404_view'
+handler500 = 'pages.views.custom_error_500_view'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -50,6 +54,7 @@ urlpatterns = [
     path("ckeditor5/", include('django_ckeditor_5.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('newsletter/', include('newsletter.urls')),
+    path('robots.txt', robots_txt, name='robots_txt'),
 ]
 
 if settings.DEBUG:

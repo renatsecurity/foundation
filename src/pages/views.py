@@ -5,6 +5,14 @@ from partners.models import Partner
 from .models import Slider, DidYouKnow
 
 
+def custom_error_404_view(request, exception):
+    return render(request, "404.html", {})
+
+
+def custom_error_500_view(request, exception=None):
+    return render(request, "500.html", {})
+
+
 def home(request):
     about_us = AboutUs.objects.first()
     news = News.objects.filter(is_published=True).order_by('-published_date')[:3]

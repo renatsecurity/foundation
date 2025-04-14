@@ -274,9 +274,10 @@ customColorPalette = [
 # CKEDITOR_5_FILE_STORAGE = "path_to_storage.CustomStorage" # optional
 CKEDITOR_5_CONFIGS = {
     'default': {
-        'toolbar': ['heading', '|', 'bold', 'italic', 'link',
-                    'bulletedList', 'numberedList', 'blockQuote', 'imageUpload', ],
-
+        'toolbar': 'Full',  # This enables all default toolbar tools
+        'height': 400,
+        'width': '100%',
+        'toolbarCanCollapse': True,
     },
     'extends': {
         'blockToolbar': [

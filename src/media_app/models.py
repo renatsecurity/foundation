@@ -24,7 +24,7 @@ class Category(models.Model):
 class BaseMedia(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    content = CKEditor5Field('Text', config_name='extends')
+    content = CKEditor5Field('Content', config_name='extends')
     published_date = models.DateTimeField(auto_now_add=True)
     is_published = models.BooleanField(default=False)
 

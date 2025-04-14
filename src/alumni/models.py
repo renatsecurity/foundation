@@ -6,7 +6,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 class Alumni(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    graduation_year = models.IntegerField()
+    graduation_year = models.IntegerField(blank=True, null=True)
     occupation = models.CharField(max_length=255, blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)
     bio = CKEditor5Field('Text', config_name='extends')

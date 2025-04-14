@@ -4,7 +4,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 
 class FAQ(models.Model):
     question = models.CharField(max_length=255)
-    answer = CKEditor5Field('Text', config_name='extends')
+    answer = CKEditor5Field('Answer', config_name='extends')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

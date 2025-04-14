@@ -6,7 +6,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 
 class AboutUs(models.Model):
     title = models.CharField(max_length=255, default="About Us")
-    content = CKEditor5Field('Text', config_name='extends')
+    content = CKEditor5Field('Content', config_name='extends')
     image = models.ImageField(upload_to='about_us/', blank=True, null=True)
     last_updated = models.DateTimeField(auto_now=True)
     youtube_video = models.URLField(blank=True, null=True)
@@ -20,7 +20,7 @@ class AboutUs(models.Model):
 
 class MissionAndVision(models.Model):
     title = models.CharField(max_length=255, unique=True)
-    description = CKEditor5Field('Text', config_name='extends')
+    description = CKEditor5Field('Description', config_name='extends')
     image = models.ImageField(upload_to='mission_vision/', blank=True, null=True)
     last_updated = models.DateTimeField(auto_now=True)
 
@@ -33,7 +33,7 @@ class MissionAndVision(models.Model):
 
 class CorporateProfile(models.Model):
     title = models.CharField(max_length=255, default="Corporate Profile")
-    content = CKEditor5Field('Text', config_name='extends')
+    content = CKEditor5Field('Content', config_name='extends')
     image = models.ImageField(upload_to='corporate_profile/', blank=True, null=True)
     last_updated = models.DateTimeField(auto_now=True)
 

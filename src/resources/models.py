@@ -6,7 +6,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 class Resource(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    description = CKEditor5Field('Text', config_name='extends')
+    description = CKEditor5Field('Description', config_name='extends')
     file = models.FileField(upload_to='resources/')
     published_date = models.DateTimeField(auto_now_add=True)
 

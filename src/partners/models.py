@@ -5,7 +5,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 
 class PartnerGroup(models.Model):
     title = models.CharField(max_length=255)
-    description = CKEditor5Field('Text', config_name='extends')
+    description = CKEditor5Field('Description', config_name='extends')
 
     def __str__(self):
         return self.title
@@ -18,7 +18,7 @@ class Partner(models.Model):
     group = models.ForeignKey(PartnerGroup, on_delete=models.CASCADE, related_name='partners')
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    description = CKEditor5Field('Text', config_name='extends')
+    description = CKEditor5Field('Description', config_name='extends')
     website = models.URLField(blank=True, null=True)
     logo = models.ImageField(upload_to='partner_logos/', blank=True, null=True)
 

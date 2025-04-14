@@ -5,7 +5,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 
 class PrivacyPolicy(models.Model):
     title = models.CharField(max_length=255, default="Privacy Policy")
-    content = CKEditor5Field('Text', config_name='extends')
+    content = CKEditor5Field('Content', config_name='extends')
     last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):

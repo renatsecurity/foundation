@@ -7,7 +7,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 class Mentor(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    bio = CKEditor5Field('Text', config_name='extends')
+    bio = CKEditor5Field('Bio', config_name='extends')
     expertise = models.CharField(max_length=255)
     designation = models.CharField(max_length=255, blank=True, null=True)
     facebook_link = models.URLField(blank=True, null=True)

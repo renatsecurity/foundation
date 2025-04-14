@@ -49,9 +49,9 @@
 
       <!-- Country Impact Chart -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Impact by Country</h2>
+        <h2>Impact by State</h2>
       </div><!-- End Country Impact Title -->
-        <canvas id="countryChart"></canvas>
+        <canvas id="stateChart"></canvas>
 
         <!-- Category Impact Chart -->
       <div class="container section-title" data-aos="fade-up">
@@ -87,7 +87,7 @@
                 });
             }
 
-            fetchChartData("{% url 'impact:country_chart_data' %}", "countryChart", "Country Impact", "rgba(75, 192, 192, 0.5)");
+            fetchChartData("{% url 'impact:state_chart_data' %}", "stateChart", "State Impact", "rgba(75, 192, 192, 0.5)");
             fetchChartData("{% url 'impact:category_chart_data' %}", "categoryChart", "Category Impact", "rgba(255, 99, 132, 0.5)");
         </script>
     </section>

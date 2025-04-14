@@ -7,7 +7,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 class OurApproach(models.Model):
     title = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(unique=True, blank=True)
-    description = CKEditor5Field('Text', config_name='extends')
+    description = CKEditor5Field('Description', config_name='extends')
     image = models.ImageField(upload_to='our_approach/', blank=True, null=True)
     youtube_video = models.URLField(blank=True, null=True)
 

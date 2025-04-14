@@ -7,7 +7,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 class SafeguardPolicy(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    content = CKEditor5Field('Text', config_name='extends')
+    content = CKEditor5Field('Content', config_name='extends')
     last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):

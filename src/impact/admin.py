@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Impact, Country, Category
+from .models import Impact, State, Category
 
 
-@admin.register(Country)
-class CountryAdmin(admin.ModelAdmin):
+@admin.register(State)
+class StateAdmin(admin.ModelAdmin):
     list_display = ('name', 'impact_value')
     prepopulated_fields = {'slug': ('name',)}
 

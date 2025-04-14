@@ -1,15 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
-from .models import Impact, Country, Category
+from .models import Impact, State, Category
 
 
 def impact_list(request):
     impacts = Impact.objects.all().order_by('-date')
-    countries = Country.objects.all()
+    states = State.objects.all()
     categories = Category.objects.all()
     context = {
         'impacts': impacts,
-        'countries': countries,
+        'states': states,
         'categories': categories,
     }
     return render(request, 'impact/impact_list.html', context)
@@ -20,11 +20,11 @@ def impact_detail(request, slug):
     return render(request, 'impact/impact_detail.html', {'impact': impact})
 
 
-def country_chart_data(request):
-    countries = Country.objects.all()
+def state_chart_data(request):
+    states = State.objects.all()
     data = {
-        "labels": [country.name for country in countries],
-        "values": [country.impact_value for country in countries],
+        "labels": [state.name for state in states],
+        "values": [state.impact_value for state in states],
     }
     return JsonResponse(data)
 

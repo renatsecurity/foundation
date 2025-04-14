@@ -26,7 +26,7 @@ class ResearchCategory(models.Model):
 class Research(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    abstract = CKEditor5Field('Text', config_name='extends')
+    abstract = CKEditor5Field('Content', config_name='extends')
     image = models.ImageField(upload_to='research_images/', blank=True, null=True)
     author = models.CharField(max_length=255)
     publication_date = models.DateField()

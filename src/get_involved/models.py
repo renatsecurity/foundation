@@ -27,8 +27,9 @@ class OpportunityCategory(models.Model):
 class Opportunity(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    description = CKEditor5Field('Text', config_name='extends')
+    description = CKEditor5Field('Description', config_name='extends')
     category = models.ForeignKey(OpportunityCategory, on_delete=models.CASCADE, related_name='opportunities')
+    image = models.ImageField(upload_to='opportunity_images/', blank=True, null=True)
     deadline = models.DateField(null=True, blank=True)
     contact_email = models.EmailField()
 

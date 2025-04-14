@@ -4,7 +4,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 
 class Slider(models.Model):
     title = models.CharField(max_length=100)
-    description = CKEditor5Field('Text', config_name='extends')
+    description = CKEditor5Field('Description', config_name='extends')
     image = models.ImageField(upload_to='slider/', blank=True, null=True)
     link = models.URLField(max_length=200, blank=True, null=True)
     is_visible = models.BooleanField(default=True)
@@ -19,7 +19,7 @@ class Slider(models.Model):
 
 
 class DidYouKnow(models.Model):
-    description = CKEditor5Field('Text', config_name='extends')
+    description = CKEditor5Field('Description', config_name='extends')
     is_visible = models.BooleanField(default=True)
     background_image = models.ImageField(upload_to='did_you_knows/', blank=True, null=True)
     background_color = models.CharField(max_length=100, blank=True, null=True)

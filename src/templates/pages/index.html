@@ -13,7 +13,7 @@
           <img src="{{ slide.image.url }}" alt="{{ slide.title }}">
           <div class="container">
             <h2>{{ slide.title }}</h2>
-            <p>{{ slide.description }}</p>
+            <p>{{ slide.description|safe }}</p>
             {% if slide.link %}
             <a href="{{ slide.link }}" class="btn-get-started">Read More</a>
             {% endif %}
@@ -84,10 +84,10 @@
 
         <div class="row position-relative">
 
-          <div class="col-lg-7 about-img" data-aos="zoom-out" data-aos-delay="200"><img src="{{ about.image.url }}" alt="{{ about.title }}"></div>
+          <div class="col-lg-7 about-img" data-aos="zoom-out" data-aos-delay="200"><img src="{{ about_us.image.url }}" alt="{{ about_us.title }}"></div>
 
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="inner-title">{{ about.title }}</h2>
+            <h2 class="inner-title">{{ about_us.title }}</h2>
             <div class="our-story">
               <h3>Our Story</h3>
               <p>Inventore aliquam beatae at et id alias. Ipsa dolores amet consequuntur minima quia maxime autem. Quidem id sed ratione. Tenetur provident autem in reiciendis rerum at dolor. Aliquam consectetur laudantium temporibus dicta minus dolor.</p>

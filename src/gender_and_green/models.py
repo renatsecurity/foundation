@@ -27,7 +27,7 @@ class Article(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
     category = models.ForeignKey(TopicCategory, on_delete=models.CASCADE, related_name='articles')
-    content = CKEditor5Field('Text', config_name='extends')
+    content = CKEditor5Field('Content', config_name='extends')
     image = models.ImageField(upload_to='gender_and_green_images/')
     author = models.CharField(max_length=100)
     published_date = models.DateField(auto_now_add=True)

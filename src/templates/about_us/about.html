@@ -6,16 +6,16 @@
 
 {% block main %}
   <main class="main">
-    <div style="margin-top: 0; background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 50%), url('/static/assets/img/about.jpg'); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat; height: 250px;" data-aos="fade-up">
+    <div style="margin-top: 0; background-image: url('/static/assets/img/backdrop.jpeg'); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat; height: 300px;" data-aos="fade-up">
       <h3 style="padding-left: 35px; padding-top: 70px; color: rgb(30, 216, 30); text-align: left; font-family: Mulish, Sans-serif; font-size: 35px; font-weight: 700;
-      text-transform: uppercase; width: 50%;">We are The Leading Philanthropy Empowering Young Africans Across All 54 African Countries</h3>
+      text-transform: uppercase; width: 50%;">We are The Leading Philanthropy Empowering Young Nigerians Across States.</h3>
     </div>
     <!-- About Section -->
     <section id="about" class="about section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2 style="color: rgb(3, 66, 3);">The Engineer Michael Anoka Foundation (MAF) was founded in 2015 by Engr. Michael Anoka, C.E; An entrepreneur, investor and philanthropist who is passionate about Africa’s economic development and social justice.</h2>
+        <h2 style="color: rgb(3, 66, 3);">The Michael Anoka Foundation (MAF) was founded in 2015 by Engr. Michael Anoka, C.E; An entrepreneur, investor and philanthropist who is passionate about Nigeria’s economic development and social justice.</h2>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -27,7 +27,7 @@
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
             <h2 class="inner-title">{{ about.title }}</h2>
             <div class="our-story">
-              <p>{{ about.description|safe }}</p>
+              <p>{{ about.content|safe }}</p>
 
               <div class="watch-video d-flex align-items-center position-relative">
                 <i class="bi bi-play-circle"></i>

@@ -27,7 +27,7 @@
                   <li><a href="{% url 'impact:impact_list' %}" class="{% if request.path == '/impact/' %}active{% endif %}">Our Impact Pillars</a></li>
                   <li><a href="{% url 'our_approach_list' %}" class="{% if request.path == '/our-approach/' %}active{% endif %}">Our Approach</a></li>
                   <li><a href="#">MAF Entrepreneurship Program</a></li>
-                  <li><a href="#">Past Programs</a></li>
+                  <li><a href="{% url 'past_programmes' %}">Past Programs</a></li>
                   <li><a href="#">MAF Forum</a></li>
               </ul>
           </li>

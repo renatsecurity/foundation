@@ -2,6 +2,8 @@
 <html lang="en">
 
 {% include "./head.html" %}
+{% block extra_meta %}{% endblock extra_meta %}
+{% block extra_css %}{% endblock extra_css %}
 
 <body class="{% block bodyClass %}index-page{% endblock bodyClass %}">
 
@@ -15,6 +17,7 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   {% include "./script.html" %}
+  {% block extra_script %}{% endblock extra_script %}
 
 </body>
 

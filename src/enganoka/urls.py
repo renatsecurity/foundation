@@ -21,9 +21,9 @@ from django.urls import path, include
 from .robots import robots_txt
 
 
-admin.site.site_header = 'The Engineer Anoka Foundation Admin Panel'
-admin.site.site_title = 'The Engineer Anoka Foundation administration'
-admin.site.index_title = 'Welcome to The Engineer Anoka Foundation Admin Panel'
+admin.site.site_header = 'Michael Anoka Foundation (MAF) Admin Panel'
+admin.site.site_title = 'Michael Anoka Foundation (MAF) administration'
+admin.site.index_title = 'Welcome to The Michael Anoka Foundation (MAF) Admin Panel'
 
 handler404 = 'pages.views.custom_error_404_view'
 handler500 = 'pages.views.custom_error_500_view'
@@ -48,6 +48,7 @@ urlpatterns = [
     path('resources/', include('resources.urls')),
     path('media_urls/', include('media_app.urls')),
     path('our-approach/', include('our_approach.urls')),
+    path('past_programmes/', include('past_programmes.urls')),
     path('alumni/', include('alumni.urls')),
     path('faqs/', include('faqs.urls')),
     path('i18n/', include('django.conf.urls.i18n')),

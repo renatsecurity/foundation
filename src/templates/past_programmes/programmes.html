@@ -1,0 +1,28 @@
+{% extends "../pages/base.html" %}
+{% load static %}
+{% block title %}MAF Past Programmes{%endblock title %}
+
+{% block bodyClass %}bg-white text-gray-900{% endblock bodyClass %}
+
+{% block main %}
+  <header class="bg-green-600 text-white py-8 text-center">
+    <h1 class="text-4xl font-bold">MAF Past Programmes</h1>
+    <p class="text-lg mt-2">Click a programme to learn more</p>
+  </header>
+
+  <main class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <aside class="md:col-span-1 bg-gray-50 p-4 rounded-lg shadow">
+      <ul class="space-y-2" id="programme-list">
+        {% for programme in programmes %}
+        <li class="programme-item cursor-pointer p-2 rounded hover:bg-green-100" data-title="{{ programme.title|escapejs }}">
+          {{ programme.title }}
+        </li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <section class="md:col-span-2 bg-white p-6 rounded-lg shadow min-h-[300px]" id="programme-content">
+      <p class="text-gray-500">Select a programme from the list to view details here.</p>
+    </section>
+  </main>
+{% endblock main %}

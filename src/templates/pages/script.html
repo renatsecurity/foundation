@@ -15,10 +15,13 @@
     AOS.init();
 </script>
  <!-- Correct PureCounter.js -->
- <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
- <script>
+<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
+<script>
    document.addEventListener("DOMContentLoaded", function () {
      new PureCounter();
    });
- </script>
-{% block extra_script %}{% endblock extra_script %}
+</script>
+<script>
+  window.programmeDescriptions=JSON.parse('{{ programmes_json|escapejs }}');
+  console.log(window.programmeDescriptions);
+</script>

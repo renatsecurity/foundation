@@ -85,6 +85,7 @@ INSTALLED_APPS = [
     'media_app.apps.MediaAppConfig',
     'our_approach.apps.OurApproachConfig',
     'pages.apps.PagesConfig',
+    'past_programmes.apps.PastProgrammesConfig',
     'privacy_policy.apps.PrivacyPolicyConfig',
     'safeguard_policy.apps.SafeguardPolicyConfig',
     'terms_and_conditions.apps.TermsAndConditionsConfig',

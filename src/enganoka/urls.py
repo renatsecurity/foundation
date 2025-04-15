@@ -14,16 +14,39 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.contrib.sitemaps.views import sitemap
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from .sitemaps import (
+    NewsModelSitemap, PressReleaseModelSitemap, StaticViewSitemap,
+    ResourceModelSitemap, ResearchModelSitemap, PastProgrammeModelSitemap,
+    ImpactModelSitemap, ArticleModelSitemap, OpportunityModelSitemap,
+    EventModelSitemap, CareerModelSitemap, PodcastModelSitemap
+)
 from .robots import robots_txt
 
 
 admin.site.site_header = 'Michael Anoka Foundation (MAF) Admin Panel'
 admin.site.site_title = 'Michael Anoka Foundation (MAF) administration'
 admin.site.index_title = 'Welcome to The Michael Anoka Foundation (MAF) Admin Panel'
+
+
+sitemaps = {
+    'news': NewsModelSitemap,
+    'press-release': PressReleaseModelSitemap,
+    'resources': ResourceModelSitemap,
+    'reseaches': ResearchModelSitemap,
+    'past-programmes': PastProgrammeModelSitemap,
+    'impacts': ImpactModelSitemap,
+    'articles': ArticleModelSitemap,
+    'opportunities': OpportunityModelSitemap,
+    'events': EventModelSitemap,
+    'careers': CareerModelSitemap,
+    'podcasts': PodcastModelSitemap,
+    'static': StaticViewSitemap,
+}
 
 handler404 = 'pages.views.custom_error_404_view'
 handler500 = 'pages.views.custom_error_500_view'
@@ -55,6 +78,7 @@ urlpatterns = [
     path("ckeditor5/", include('django_ckeditor_5.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('newsletter/', include('newsletter.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
     path('robots.txt', robots_txt, name='robots_txt'),
 ]
 

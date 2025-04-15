@@ -1,0 +1,45 @@
+:root {
+
+    --header-bg: #066806 !important;
+    --header-color: #ffffff !important;
+    --header-link-color: #ffffff !important;
+    --link-fg: #088508 !important;
+    --button-bg: #044904 !important;
+    --button-hover-bg: #044904 !important;
+    --default-button-bg: #066806 !important;
+    --default-button-hover-bg:#044904 !important;
+    --link-fg: #088508 !important;
+}
+
+/* Change the header background color */
+#header {
+    background-color: #066806 !important; /* Replace with your desired color */
+}
+
+#header a:link, a.section:link, a.deletelink:link {
+    color: #ffffff !important; /* Replace with your desired color */
+}
+
+.breadcrumbs {
+    background-color: #044904 !important; /* Replace with your desired color */
+}
+
+#icon-auto, #icon-moon, #icon-sun {
+    color: #066806 !important; /* Replace with your desired color */
+}
+
+.module caption {
+    color: #066806 !important; /* Replace with your desired color */
+}
+
+.datetimeshortcuts a:link .date-icon, a:link {
+    color: #088508 !important; /* Replace with your desired color */
+}
+
+#header a:hover, a:hover {
+    color: #088508 !important; /* Replace with your desired color */
+}
+
+.current-model {
+    background-color: rgba(111, 204, 92, 0.925) !important; /* Replace with your desired color */
+}

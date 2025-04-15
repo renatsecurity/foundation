@@ -10,6 +10,11 @@ class Impact(models.Model):
     description = CKEditor5Field('Description', config_name='extends')
     date = models.DateField()
     image = models.ImageField(upload_to='impact_images/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
+    state = models.ForeignKey('State', on_delete=models.SET_NULL, null=True, blank=True)
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True, blank=True)
+    is_published = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

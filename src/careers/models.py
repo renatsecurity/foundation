@@ -12,6 +12,7 @@ class Career(models.Model):
     location = models.CharField(max_length=255)
     posted_date = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField()
+    last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title

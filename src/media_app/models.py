@@ -26,6 +26,7 @@ class BaseMedia(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     content = CKEditor5Field('Content', config_name='extends')
     published_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=False)
 
     class Meta:
@@ -87,6 +88,7 @@ class Podcast(models.Model):
     slug = models.SlugField(unique=True, blank=True)
     cloudflare_link = models.URLField(help_text="Direct Cloudflare link to the audio file")
     published_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:

@@ -10,6 +10,7 @@ class Event(models.Model):
     date = models.DateTimeField()
     location = models.CharField(max_length=255)
     image = models.ImageField(upload_to='event_images/', blank=True, null=True)
+    last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title

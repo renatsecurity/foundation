@@ -32,6 +32,8 @@ class Opportunity(models.Model):
     image = models.ImageField(upload_to='opportunity_images/', blank=True, null=True)
     deadline = models.DateField(null=True, blank=True)
     contact_email = models.EmailField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title

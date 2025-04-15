@@ -9,6 +9,14 @@ class Resource(models.Model):
     description = CKEditor5Field('Description', config_name='extends')
     file = models.FileField(upload_to='resources/')
     published_date = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
+    is_published = models.BooleanField(default=False)
+
+    def get_file_url(self):
+        return self.file.url
+
+    def get_file_name(self):
+        return self.file.name
 
     def __str__(self):
         return self.title

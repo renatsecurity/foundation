@@ -31,6 +31,8 @@ class Article(models.Model):
     image = models.ImageField(upload_to='gender_and_green_images/')
     author = models.CharField(max_length=100)
     published_date = models.DateField(auto_now_add=True)
+    updated_date = models.DateField(auto_now=True)
+    is_published = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

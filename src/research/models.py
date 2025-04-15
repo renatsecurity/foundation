@@ -32,6 +32,9 @@ class Research(models.Model):
     publication_date = models.DateField()
     document = models.FileField(upload_to='research_papers/', blank=True, null=True)
     category = models.ForeignKey(ResearchCategory, on_delete=models.CASCADE, related_name='research_papers')
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
+    is_published = models.BooleanField(default=False)   
 
     def __str__(self):
         return self.title
@@ -46,3 +49,4 @@ class Research(models.Model):
     
     class Meta:
         verbose_name_plural = "Research Papers"
+        ordering = ['-publication_date']

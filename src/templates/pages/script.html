@@ -1,4 +1,6 @@
 {% load static %}
+{% load compress %}
+{% compress js %}
 <!-- Vendor JS Files -->
 <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
@@ -15,7 +17,6 @@
     AOS.init();
 </script>
  <!-- Correct PureCounter.js -->
-<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
 <script>
    document.addEventListener("DOMContentLoaded", function () {
      new PureCounter();
@@ -25,3 +26,5 @@
   window.programmeDescriptions=JSON.parse('{{ programmes_json|escapejs }}');
   console.log(window.programmeDescriptions);
 </script>
+{% endcompress %}
+<script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>

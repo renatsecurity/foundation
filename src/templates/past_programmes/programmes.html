@@ -1,5 +1,9 @@
 {% extends "../pages/base.html" %}
 {% load static %}
+{% block extra_css %}
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="{% static 'assets/js/programmes.js' %}" defer></script>
+{% endblock extra_css %}
 {% block title %}MAF Past Programmes{%endblock title %}
 
 {% block bodyClass %}bg-white text-gray-900{% endblock bodyClass %}
@@ -26,3 +30,9 @@
     </section>
   </main>
 {% endblock main %}
+{% block extra_script %}
+  <script>
+    window.programmeDescriptions=JSON.parse('{{ programmes_json|escapejs }}');
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
+{% endblock extra_script %}

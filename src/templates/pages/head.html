@@ -6,7 +6,6 @@
     <title>{% block title %}{%endblock title %} Engineer Michael Anoka Foundation</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    {% block extra_meta %}{% endblock extra_meta %}
   
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/apple-touch-icon.png' %}">
@@ -28,9 +27,4 @@
     <!-- Main CSS File -->
     <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
     {% endcompress %}
-    <script src="https://cdn.tailwindcss.com"></script>
-    {% compress js %}
-    <script src="{% static 'assets/js/programmes.js' %}" defer></script>
-    {% endcompress %}
-    {% block extra_css %}{% endblock extra_css %}
 </head>

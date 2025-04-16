@@ -10,6 +10,7 @@ class Career(models.Model):
     description = CKEditor5Field('Description', config_name='extends')
     requirements = CKEditor5Field('Requirements', config_name='extends')
     location = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="michaelanoka/career/", blank=True, null=True)
     posted_date = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField()
     last_updated = models.DateTimeField(auto_now=True)
